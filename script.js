@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Price map
   const PRICES = {
-    "1 Unit": "$24.00 USD",
+    "1 Unit": "$10.00 USD",
     "2 Units": "$18.00 USD",
     "3 Units": "$24.00 USD"
   };
