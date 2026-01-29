@@ -107,7 +107,7 @@ h2 {
   max-height: 400px;
   padding-bottom: 16px;
 }
-
+/* Labels */
 .labels {
   display: grid;
   grid-template-columns: 40px 140px 140px;
@@ -116,6 +116,11 @@ h2 {
   color: #555;
 }
 
+.labels span:first-child {
+  visibility: hidden;
+}
+
+/* row */
 .row {
   display: grid;
   grid-template-columns: 40px 140px 140px;
