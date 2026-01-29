@@ -27,3 +27,4 @@ document.addEventListener("pointerdown", (e) => {
   const box = header.closest(".box");
   if (box) activateBox(box);
 });
+const totalEl = document.querySelector(".total");
