@@ -1,50 +1,37 @@
 body {
-  font-family: Inter, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #f5f6f8;
 }
 
-/* Main Card */
 .container {
-  width: 360px;
+  width: 380px;
   margin: 40px auto;
-  background: #ffffff;
+  background: white;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
+  color: #e07a7a;
   margin-bottom: 20px;
 }
 
-/* Box Card */
+/* Box */
 .box {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #ddd;
   border-radius: 12px;
-  margin-bottom: 16px;
-  overflow: hidden;
+  margin-bottom: 18px;
   position: relative;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .box.active {
-  border-color: #ff6b6b;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-}
-
-/* Most Popular Badge */
-.badge {
-  position: absolute;
-  top: -10px;
-  right: 14px;
-  background: #ff6b6b;
-  color: white;
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-weight: bold;
+  border-color: #e07a7a;
+  background: #fff5f5;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 /* Header */
@@ -62,31 +49,53 @@ h2 {
   gap: 10px;
 }
 
-/* Radio */
 .radio {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   border: 2px solid #ccc;
 }
 
 .box.active .radio {
-  border-color: #ff6b6b;
-  background: #ff6b6b;
+  background: #e07a7a;
+  border-color: #e07a7a;
 }
 
-/* Text */
-.plan-title {
-  font-size: 14px;
-  font-weight: 600;
+/* Discount tag */
+.off {
+  background: #e07a7a;
+  color: white;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
-.plan-price {
-  font-size: 14px;
-  font-weight: 600;
+/* Price */
+.price {
+  text-align: right;
 }
 
-/* Expand Content */
+.strike {
+  display: block;
+  font-size: 11px;
+  color: gray;
+  text-decoration: line-through;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: #e07a7a;
+  color: white;
+  padding: 5px 12px;
+  font-size: 11px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Content */
 .box-content {
   max-height: 0;
   overflow: hidden;
@@ -95,77 +104,82 @@ h2 {
 }
 
 .box.active .box-content {
-  max-height: 220px;
+  max-height: 400px;
   padding-bottom: 16px;
 }
 
-/* Colors */
-.colors {
-  display: flex;
+/* Labels */
+.labels {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* Rows */
+.row {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
   gap: 10px;
-  margin: 10px 0;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
-.color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  cursor: pointer;
-  transition: transform 0.2s ease, border 0.2s ease;
+.row-label {
+  font-size: 12px;
+  color: #555;
 }
 
-.color:hover {
-  transform: scale(1.1);
-}
-
-.red {
-  background: #d84315;
-}
-
-.blue {
-  background: #304ffe;
-}
-
-.green {
-  background: #2e7d32;
-}
-
-/* Dropdown */
-.sizes select {
-  width: 100%;
+/* Select */
+select {
   padding: 6px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
-/* CTA */
-.cta {
-  width: 100%;
-  padding: 12px;
-  background: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.cta:hover {
-  background: #ff5252;
+/* Summary */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
 }
 
 .delivery {
-  text-align: center;
+  color: #e07a7a;
+  font-size: 14px;
+}
+
+.total {
+  font-weight: bold;
+}
+
+/* CTA */
+.cta {
+  width: 100%;
+  padding: 14px;
+  background: #e07a7a;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: #d96b6b;
+}
+
+.powered {
+  text-align: right;
   font-size: 12px;
-  color: #ff6b6b;
-  margin-top: 10px;
+  color: gray;
+  margin-top: 6px;
 }
 
 /* Mobile */
 @media (max-width: 400px) {
   .container {
-    width: 90%;
+    width: 95%;
   }
 }
