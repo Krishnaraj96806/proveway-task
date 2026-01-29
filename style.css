@@ -3,13 +3,14 @@ body {
   background: #f5f6f8;
 }
 
+/* Main Card */
 .container {
   width: 360px;
   margin: 40px auto;
   background: #ffffff;
   padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -23,7 +24,6 @@ h2 {
   border: 1px solid #e5e5e5;
   border-radius: 12px;
   margin-bottom: 16px;
-  cursor: pointer;
   overflow: hidden;
   position: relative;
   transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -38,7 +38,7 @@ h2 {
 .badge {
   position: absolute;
   top: -10px;
-  right: 12px;
+  right: 14px;
   background: #ff6b6b;
   color: white;
   font-size: 10px;
@@ -53,6 +53,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  cursor: pointer;
 }
 
 .left {
@@ -61,6 +62,7 @@ h2 {
   gap: 10px;
 }
 
+/* Radio */
 .radio {
   width: 16px;
   height: 16px;
@@ -73,6 +75,7 @@ h2 {
   background: #ff6b6b;
 }
 
+/* Text */
 .plan-title {
   font-size: 14px;
   font-weight: 600;
@@ -83,7 +86,7 @@ h2 {
   font-weight: 600;
 }
 
-/* Expandable Content */
+/* Expand Content */
 .box-content {
   max-height: 0;
   overflow: hidden;
@@ -92,7 +95,7 @@ h2 {
 }
 
 .box.active .box-content {
-  max-height: 200px;
+  max-height: 220px;
   padding-bottom: 16px;
 }
 
@@ -128,7 +131,7 @@ h2 {
   background: #2e7d32;
 }
 
-/* Size Dropdown */
+/* Dropdown */
 .sizes select {
   width: 100%;
   padding: 6px;
@@ -143,7 +146,7 @@ h2 {
   background: #ff6b6b;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
