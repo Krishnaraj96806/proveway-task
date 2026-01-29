@@ -1,19 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Interactive Boxes</title>
+  <title>Choose Your Plan</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="container">
+    <h2>YAY! It's BOGO</h2>
 
-    <h2>Choose Your Plan</h2>
-
+    <!-- BOX 1 -->
     <div class="box">
-      <div class="box-header">Basic Plan</div>
+      <div class="box-header">
+        <div class="left">
+          <span class="radio"></span>
+          <div class="plan-title">1 Unit</div>
+        </div>
+        <div class="right">
+          <div class="plan-price">$10.00 USD</div>
+        </div>
+      </div>
+
       <div class="box-content">
         <p>Choose Color:</p>
         <div class="colors">
@@ -24,15 +32,30 @@
 
         <p>Choose Size:</p>
         <div class="sizes">
-          <button>S</button>
-          <button>M</button>
-          <button>L</button>
+          <select>
+            <option>Select Size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
         </div>
       </div>
     </div>
 
-    <div class="box">
-      <div class="box-header">Standard Plan</div>
+    <!-- BOX 2 -->
+    <div class="box popular">
+      <div class="badge">MOST POPULAR</div>
+
+      <div class="box-header">
+        <div class="left">
+          <span class="radio"></span>
+          <div class="plan-title">2 Units</div>
+        </div>
+        <div class="right">
+          <div class="plan-price">$18.00 USD</div>
+        </div>
+      </div>
+
       <div class="box-content">
         <p>Choose Color:</p>
         <div class="colors">
@@ -43,15 +66,28 @@
 
         <p>Choose Size:</p>
         <div class="sizes">
-          <button>S</button>
-          <button>M</button>
-          <button>L</button>
+          <select>
+            <option>Select Size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
         </div>
       </div>
     </div>
 
+    <!-- BOX 3 -->
     <div class="box">
-      <div class="box-header">Premium Plan</div>
+      <div class="box-header">
+        <div class="left">
+          <span class="radio"></span>
+          <div class="plan-title">3 Units</div>
+        </div>
+        <div class="right">
+          <div class="plan-price">$24.00 USD</div>
+        </div>
+      </div>
+
       <div class="box-content">
         <p>Choose Color:</p>
         <div class="colors">
@@ -62,50 +98,22 @@
 
         <p>Choose Size:</p>
         <div class="sizes">
-          <button>S</button>
-          <button>M</button>
-          <button>L</button>
+          <select>
+            <option>Select Size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
         </div>
       </div>
     </div>
 
+    <p class="delivery">Free Delivery</p>
+    <button class="cta">+ Add to Cart</button>
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Created as part of a hiring assessment. Not for commercial use. -->
 </body>
 </html>
-
-
-
-
-<script>
-const boxes = document.querySelectorAll(".box");
-
-boxes.forEach(box => {
-  box.addEventListener("click", () => {
-    boxes.forEach(b => b.classList.remove("active"));
-    box.classList.add("active");
-  });
-});
-
-document.querySelectorAll(".box").forEach(box => {
-  const colors = box.querySelectorAll(".color");
-  const buttons = box.querySelectorAll(".sizes button");
-
-  colors.forEach(color => {
-    color.addEventListener("click", (e) => {
-      e.stopPropagation();
-      colors.forEach(c => c.style.border = "2px solid #ccc");
-      color.style.border = "2px solid black";
-    });
-  });
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      buttons.forEach(b => b.style.background = "white");
-      btn.style.background = "#ddd";
-    });
-  });
-});
-</script>
