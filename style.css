@@ -1,66 +1,95 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-  }
-  
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+.container {
+  width: 350px;
+  margin: 40px auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Main Box */
+.box {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.box.active {
+  border-color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.box-header {
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* Expandable content */
+.box-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.box.active .box-content {
+  max-height: 200px;
+  padding-bottom: 15px;
+}
+
+/* Colors */
+.colors {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.color:hover {
+  transform: scale(1.1);
+}
+
+.red { background: red; }
+.blue { background: blue; }
+.green { background: green; }
+
+/* Sizes */
+.sizes button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sizes button:hover {
+  background: #eee;
+  transform: scale(1.05);
+}
+
+/* Mobile friendly */
+@media (max-width: 400px) {
   .container {
-    width: 350px;
-    margin: 40px auto;
+    width: 90%;
   }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .box {
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: 0.3s;
-  }
-  
-  .box-header {
-    padding: 15px;
-    font-weight: bold;
-  }
-  
-  .box-content {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 15px;
-    transition: max-height 0.4s ease;
-  }
-  
-  .box.active .box-content {
-    max-height: 200px;
-    padding-bottom: 15px;
-  }
-  
-  .colors {
-    display: flex;
-    gap: 10px;
-    margin: 10px 0;
-  }
-  
-  .color {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-  }
-  
-  .red { background: red; }
-  .blue { background: blue; }
-  .green { background: green; }
-  
-  .sizes button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: 1px solid #aaa;
-    background: white;
-    cursor: pointer;
-  }
-  
+}
