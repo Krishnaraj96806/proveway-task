@@ -108,24 +108,22 @@ h2 {
   padding-bottom: 16px;
 }
 
-/* Labels */
 .labels {
   display: grid;
-  grid-template-columns: 40px 1.2fr 1fr;
+  grid-template-columns: 40px 140px 140px;
   font-size: 12px;
   margin-bottom: 6px;
   color: #555;
 }
 
-
-/* Rows */
 .row {
   display: grid;
-  grid-template-columns: 40px 1fr 1fr;
+  grid-template-columns: 40px 140px 140px;
   gap: 10px;
   margin-bottom: 10px;
   align-items: center;
 }
+
 
 .row-label {
   font-size: 12px;
