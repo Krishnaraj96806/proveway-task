@@ -5,25 +5,21 @@ function activateBox(selectedBox) {
   selectedBox.classList.add("active");
 }
 
+// Only toggle when clicking header
+document.addEventListener("pointerdown", (e) => {
+  const header = e.target.closest("[data-toggle]");
+  if (!header) return;
+
+  const box = header.closest(".box");
+  if (box) activateBox(box);
+});
+
+// Per-box color selection
 boxes.forEach(box => {
-  // Only activate when clicking the header, NOT the content
-  const header = box.querySelector(".box-header");
-  const content = box.querySelector(".box-content");
-
-  header.addEventListener("click", () => {
-    activateBox(box);
-  });
-
-  // Prevent clicks inside content from toggling the box
-  content.addEventListener("click", e => {
-    e.stopPropagation();
-  });
-
-  // Color selection
   const colors = box.querySelectorAll(".color");
 
   colors.forEach(color => {
-    color.addEventListener("click", e => {
+    color.addEventListener("pointerdown", (e) => {
       e.stopPropagation();
       colors.forEach(c => (c.style.border = "2px solid #ccc"));
       color.style.border = "2px solid black";
