@@ -12,8 +12,12 @@ function activateBox(selectedBox) {
   boxes.forEach(box => box.classList.remove("active"));
   selectedBox.classList.add("active");
 
-  const title = selectedBox.querySelector(".plan-title").textContent.trim();
+  if (!totalEl) return;
 
+  const titleEl = selectedBox.querySelector(".plan-title");
+  if (!titleEl) return;
+
+  const title = titleEl.textContent.trim();
   if (PRICES[title]) {
     totalEl.textContent = "Total : " + PRICES[title];
   }
@@ -27,4 +31,3 @@ document.addEventListener("pointerdown", (e) => {
   const box = header.closest(".box");
   if (box) activateBox(box);
 });
-const totalEl = document.querySelector(".total");
