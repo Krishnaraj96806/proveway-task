@@ -1,14 +1,21 @@
 const boxes = document.querySelectorAll(".box");
+const totalEl = document.querySelector(".total");
+
+// Price map
+const PRICES = {
+  "1 Unit": "$24.00 USD",
+  "2 Units": "$18.00 USD",
+  "3 Units": "$24.00 USD"
+};
 
 function activateBox(selectedBox) {
   boxes.forEach(box => box.classList.remove("active"));
   selectedBox.classList.add("active");
 
-  // Update total price
-  const priceText = selectedBox.querySelector(".price strong");
-  if (priceText) {
-    document.querySelector(".total").textContent =
-      "Total : " + priceText.textContent;
+  const title = selectedBox.querySelector(".plan-title").textContent.trim();
+
+  if (PRICES[title]) {
+    totalEl.textContent = "Total : " + PRICES[title];
   }
 }
 
