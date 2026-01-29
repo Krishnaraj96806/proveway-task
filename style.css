@@ -111,11 +111,12 @@ h2 {
 /* Labels */
 .labels {
   display: grid;
-  grid-template-columns: 40px 1fr 1fr;
+  grid-template-columns: 40px 1.2fr 1fr;
   font-size: 12px;
   margin-bottom: 6px;
   color: #555;
 }
+
 
 /* Rows */
 .row {
